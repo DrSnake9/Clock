@@ -7,10 +7,20 @@
 
 <script>
 import Clock from './components/Clock.vue'
+
 export default {
   name: 'App',
   components: {
     Clock
+  },
+  methods: {
+    getLocale () {
+      if (navigator.languages && navigator.languages.length) {
+        return navigator.languages[0]
+      } else {
+        return navigator.language
+      }
+    }
   }
 
 }
